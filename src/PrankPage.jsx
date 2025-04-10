@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { AlertTriangle } from "lucide-react";
+import { Analytics } from "@vercel/analytics/react"
 
 const Container = styled.div`
   display: flex;
@@ -54,6 +55,7 @@ export default function PrankPage() {
           </motion.div>
         )}
       </StyledCard>
+      <Analytics />
     </Container>
   );
 }
