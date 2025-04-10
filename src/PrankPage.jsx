@@ -51,7 +51,7 @@ export default function PrankPage() {
   const sendFoolMessage = () => {
     if (window.Kakao) {
       window.Kakao.Link.sendCustom({
-        templateId: 119564,
+        templateId: 119565,
       });
     }
   };
@@ -62,14 +62,14 @@ export default function PrankPage() {
       <StyledCard>
         {!pranked ? (
           <div>
-            <h1 className="text-2xl font-bold mb-4">이 버튼을 누르면 놀라운 일이 일어납니다!</h1>
+            <h1 className="text-2xl font-bold mb-4">진짜겠어요?</h1>
             <StyledButton onClick={() => setPranked(true)}>눌러보기</StyledButton>
           </div>
         ) : (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
             <AlertTriangle size={48} color="#ef4444" className="mx-auto mb-4" />
             <h1 style={{ fontSize: "24px", fontWeight: "bold", color: "#dc2626" }}>속았지? 😂</h1>
-            <p style={{ color: "#6b7280", marginTop: "8px" }}>이 버튼은 아무 일도 안 일어나~</p>
+            <p style={{ color: "#6b7280", marginTop: "8px" }}>속으셨네요~~!</p>
             <StyledButton secondary onClick={() => setPranked(false)}>다시 해보기</StyledButton>
           </motion.div>
         )}
