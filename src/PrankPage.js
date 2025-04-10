@@ -5,7 +5,6 @@ import { AlertTriangle } from "lucide-react";
 import { Analytics } from "@vercel/analytics/react";
 
 const kakaoApiKey = import.meta.env.VITE_KAKAO_API_KEY;
-console.log("Kakao API Key:", kakaoApiKey);
 
 
 
@@ -52,7 +51,7 @@ export default function PrankPage() {
   const sendFoolMessage = () => {
     if (window.Kakao) {
       window.Kakao.Link.sendCustom({
-        templateId: 119559,
+        templateId: 119564,
       });
     }
   };
