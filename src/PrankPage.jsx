@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { AlertTriangle } from "lucide-react";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
+
+const kakaoApiKey = import.meta.env.VITE_KAKAO_API_KEY;
+console.log("Kakao API Key:", kakaoApiKey);
+
+
 
 const Container = styled.div`
   display: flex;
@@ -38,8 +43,23 @@ const StyledButton = styled.button`
 export default function PrankPage() {
   const [pranked, setPranked] = useState(false);
 
+  useEffect(() => {
+    if (window.Kakao && !window.Kakao.isInitialized()) {
+      window.Kakao.init(kakaoApiKey);
+    }
+  }, []);
+
+  const sendFoolMessage = () => {
+    if (window.Kakao) {
+      window.Kakao.Link.sendCustom({
+        templateId: 119559,
+      });
+    }
+  };
+
   return (
     <Container>
+      <StyledButton onClick={sendFoolMessage}>카카오톡으로 공유하기</StyledButton>
       <StyledCard>
         {!pranked ? (
           <div>
