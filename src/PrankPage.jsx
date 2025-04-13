@@ -71,6 +71,7 @@ export default function PrankPage() {
             <h1 style={{ fontSize: "24px", fontWeight: "bold", color: "#dc2626" }}>속았지? 😂</h1>
             <p style={{ color: "#6b7280", marginTop: "8px" }}>속으셨네요~~!</p>
             <StyledButton secondary onClick={() => setPranked(false)}>다시 해보기</StyledButton>
+            
           </motion.div>
         )}
       </StyledCard>
